@@ -1,10 +1,11 @@
 services:
   - type: web
     name: n8n-personal
-    env: docker
-    dockerfilePath: ./Dockerfile
+    runtime: image
+    image:
+      url: n8nio/n8n:latest
     plan: free
-    healthCheckPath: /healthz
+    healthCheckPath: /
     envVars:
       - key: N8N_PROTOCOL
         value: https
