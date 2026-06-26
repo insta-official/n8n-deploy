@@ -1,9 +1,8 @@
 services:
   - type: web
     name: n8n-personal
-    runtime: image
-    image:
-      url: n8nio/n8n:latest
+    env: docker
+    dockerfilePath: ./Dockerfile
     plan: free
     envVars:
       - key: N8N_PROTOCOL
@@ -24,5 +23,3 @@ services:
         value: "168"
       - key: N8N_PAYLOAD_SIZE_MAX
         value: "16"
-      - key: N8N_METRICS
-        value: "false"
