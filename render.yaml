@@ -5,7 +5,6 @@ services:
     image:
       url: n8nio/n8n:latest
     plan: free
-    healthCheckPath: /healthz
     envVars:
       - key: N8N_PROTOCOL
         value: https
@@ -19,5 +18,3 @@ services:
         value: https://n8n-personal-m51h.onrender.com
       - key: GENERIC_TIMEZONE
         value: Europe/Rome
-      - key: NODE_OPTIONS
-        value: "--max-old-space-size=256"
