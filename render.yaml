@@ -5,19 +5,19 @@ services:
     image:
       url: n8nio/n8n:latest
     plan: free
-    healthCheckPath: /
+    healthCheckPath: /healthz
     envVars:
       - key: N8N_PROTOCOL
         value: https
       - key: N8N_PORT
         value: 5678
-      - key: N8N_METRICS
-        value: "false"
-      - key: N8N_SKIP_WEBHOOK_DEREGISTRATION_SHUTDOWN
-        value: "true"
-      - key: DB_TYPE
-        value: sqlite
-      - key: DB_SQLITE_DATABASE
-        value: /home/node/.n8n/database.sqlite
+      - key: N8N_HOST
+        value: n8n-personal-m51h.onrender.com
+      - key: N8N_EDITOR_BASE_URL
+        value: https://n8n-personal-m51h.onrender.com
+      - key: WEBHOOK_URL
+        value: https://n8n-personal-m51h.onrender.com
       - key: GENERIC_TIMEZONE
         value: Europe/Rome
+      - key: NODE_OPTIONS
+        value: "--max-old-space-size=256"
